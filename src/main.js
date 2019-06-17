@@ -4,11 +4,11 @@ import Vue from 'vue';
 import App from './App';
 import VueRouter from 'vue-router';
 import router from './router';
-import Cesium from 'cesium/Cesium';
-import 'cesium/Widgets/widgets.css';
+import axios from 'axios';
 import iView from 'iview';
 import 'iview/dist/styles/iview.css';
 
+Vue.prototype.$axios = axios;
 Vue.config.productionTip = false;
 
 Vue.use(VueRouter);
@@ -19,8 +19,5 @@ new Vue({
   el: '#app',
   router,
   components: { App },
-  template: '<App/>',
-  mounted() {
-    var viewer = new Cesium.Viewer('cesiumContainer');
-  }
+  template: '<App/>'
 });
